@@ -1,6 +1,6 @@
-## DRUMS JS
+## CLOCK JS
 
-Projeto de uma mini bateria feito com html, sass e javaScript.
+Projeto de um relógio analógico e um digital feito com html, sass e javaScript.
 
 #### SASS
 sass src/sass/style.scss assets/css/style.css --style compressed --no-source-map
