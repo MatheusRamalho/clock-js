@@ -1,0 +1,151 @@
+
+body {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main__ {
+    width: 100%;
+    height: calc(100vh - 5rem);
+    overflow: hidden;
+    background-color: $blackDark;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer__ {
+    width: 100%;
+    height: 5rem;
+    padding: 0 5rem;
+    border-top: 0.063rem solid $blackRegular;
+    background-color: $blackDark;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    span {
+        font-size: 0.9rem;
+        font-style: italic;
+        text-align: center;
+    }
+
+    a {
+        font-size: 0.9rem;
+
+        &:hover {
+            color: $colorRegular;
+        }
+    }
+}
+
+.clock__analog {
+    position: relative;
+
+    width: 31.25rem;
+    height: 31.25rem;
+    border-radius: 50%;
+    border: 0.313rem solid $blackDark;
+    background-color: $blackRegular;
+    background-image: url("../../assets/images/clock.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 -0.5rem 0.5rem rgba(255, 255, 255, 0.05),
+        inset 0 -0.5rem 0.5rem rgba(255, 255, 255, 0.05),
+        0 0.5rem 0.5rem rgba(0, 0, 0, 0.3),
+        inset 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: '';
+        z-index: 5;
+        position: absolute;
+
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+        background-color: $white;
+    }
+
+    .clock__pointer__hour,
+    .clock__pointer__minute,
+    .clock__pointer__second {
+        position: absolute;
+
+        width: 1.25rem;
+        border-radius: 0.44rem;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .clock__pointer__hour::before,
+    .clock__pointer__minute::before,
+    .clock__pointer__second::before {
+        content: '';
+        position: absolute;
+
+        border-radius: 0.44rem;
+    }
+
+    .clock__pointer__hour {
+        height: 11.25rem;
+
+        &::before {
+            z-index: 2;
+
+            width: 0.5rem;
+            height: 6.25rem;
+            background-color: $colorDark;
+        }
+    }
+
+    .clock__pointer__minute {
+        height: 16.25rem;
+
+        &::before {
+            z-index: 3;
+
+            width: 0.375rem;
+            height: 8.75rem;
+            background-color: $colorRegular;
+        }
+    }
+
+    .clock__pointer__second {
+        height: 21.25rem;
+
+        &::before {
+            z-index: 4;
+
+            width: 0.25rem;
+            height: 14.375rem;
+            background-color: $colorLight;
+        }
+    }
+}
+
+.clock__digital {
+    width: 10.625rem;
+    height: 4.375rem;
+    margin-top: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: $blackRegular;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2rem;
+    font-weight: 700;
+}

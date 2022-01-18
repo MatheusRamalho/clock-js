@@ -1,0 +1,136 @@
+// CSS RESET...
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+* {
+    // Firefox...
+    scrollbar-width: auto;
+    scrollbar-color: $colorLight transparent;
+
+    &::-webkit-scrollbar { // Chrome, Edge e Safari...
+        width: 0.938rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $colorLight;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: $font;
+    font-weight: 300;
+    font-size: 1rem;
+    color: $grayDark;
+    // line-height: calc(1em + 0.8rem); // Altura variavél para a fonte...
+    // letter-spacing: 0.10rem;
+    text-transform: none;
+
+    background-color: $blackDark;
+}
+
+input, button, textarea, select {
+    margin: 0;
+
+    font-family: inherit; // Para que os elementos peguem a fonte do pai...
+    letter-spacing: normal;
+    text-transform: none;
+    text-align: start;
+}
+
+img, picture, video, canvas, svg {
+    max-width: 100%;
+
+    display: block;
+}
+
+a {
+    color: $grayDark;
+    text-decoration: none;
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, small, address {
+    overflow-wrap: break-word; // Para que o texto quebre...
+    hyphens: auto; // Adiciona hífen...
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+
+    font-family: $font;
+    font-weight: 700;
+    color: $colorRegular;
+    line-height: calc(1em + 1rem);
+}
+
+h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+
+h2 {
+    font-size: calc(1.325rem + 0.9vw);
+}
+
+h3 {
+    font-size: calc(1.3rem + 0.6vw);
+}
+
+h4 {
+    font-size: calc(1.275rem + 0.3vw);
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+h4, h5, h6 {
+    font-weight: 500;
+    color: $white;
+}
+
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1080px) {
+    html {
+        font-size: 93,75%;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 87,5%;
+    }
+}

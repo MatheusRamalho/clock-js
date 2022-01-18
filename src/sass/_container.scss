@@ -1,0 +1,38 @@
+// Usados para manter um padrão de largura...
+.container__ {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0.938rem;
+    padding-left: 0.938rem;
+}
+
+@media (min-width: 576px) {
+    .container__ {
+        max-width: 33.75rem; //540px
+    }
+}
+
+@media (min-width: 768px) {
+    .container__ {
+        max-width: 45rem; //720px
+    }
+}
+
+@media (min-width: 992px) {
+    .container__ {
+        max-width: 60rem; //960px
+    }
+}
+
+@media (min-width: 1200px) {
+    .container__ {
+        max-width: 71.25rem; //1140px
+    }
+}
+
+@media (min-width: 1400px) {
+    .container__ {
+        max-width: 82.5rem; //1320px
+    }
+}
