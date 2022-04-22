@@ -1,0 +1,19 @@
+@use '../abstracts/colors'as color;
+
+main.main__ {
+    width: 100%;
+    height: calc(100vh - 5rem);
+    overflow: hidden;
+    background-color: color.$colorsBlack2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media(max-width: 600px) {
+    main.main__ {
+        height: calc(100vh - 6.25rem);
+    }
+}

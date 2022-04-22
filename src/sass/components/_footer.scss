@@ -1,0 +1,31 @@
+@use '../abstracts/fonts'as font;
+@use '../abstracts/colors'as color;
+@use '../abstracts/spaces'as space;
+
+footer.footer__ {
+    width: 100%;
+    height: 5rem;
+    padding: 0 space.$space40;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    a {
+        font-size: font.$fsSM;
+        color: color.$colorsGray2;
+
+        &:hover {
+            color: color.$colorsYellow0;
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    footer.footer__ {
+        height: 100px;
+        padding: 0 space.$space32;
+
+        justify-content: center;
+    }
+}
