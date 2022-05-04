@@ -14,9 +14,33 @@ const pointerHour = document.querySelector('.clock__pointer__hour');
 const pointerMinute = document.querySelector('.clock__pointer__minute');
 const pointerSecond = document.querySelector('.clock__pointer__second');
 
-function fixZero(time) {
-    // Seta o zero do lado esquerdo nos valores menores que 10...
-    return time < 10 ? `0${time}` : time;
+// Seta o zero do lado esquerdo nos valores menores que 10...
+const handleFixZero = (time) => {
+    return (time < 10)
+        ? `0${time}`
+        : time;
+}
+
+// Envia pro html os valores do relógio digital...
+const handleClockDigital = (hour, minute, second) => {
+    clockDigital.innerHTML = `${handleFixZero(hour)}:${handleFixZero(minute)}:${handleFixZero(second)}`;
+}
+
+// Cálculo da rotação dos ponteiros...
+const handleRotatePointersCalc = (deg, hour, minute, second) => {
+    // Hora é dividida por 12 por que o relógio só tem 12 horas e não 24...
+    let hourDeg = ((360 / 12) * hour); // ((hour / 12) * hour);
+    let minuteDeg = (minute * deg);
+    let secondDeg = (second * deg);
+
+    handleRotatePointersStyle(hourDeg, minuteDeg, secondDeg);
+}
+
+// Rotaciona os ponteiros com css...
+const handleRotatePointersStyle = (hour, minute, second) => {
+    pointerHour.style.transform = `rotateZ(${hour}deg)`;
+    pointerMinute.style.transform = `rotateZ(${minute}deg)`;
+    pointerSecond.style.transform = `rotateZ(${second}deg)`;
 }
 
 setInterval(() => {
@@ -26,16 +50,6 @@ setInterval(() => {
     let minute = currentTime.getMinutes(); // Pega os minutos...
     let second = currentTime.getSeconds(); // Pega os segundos...
 
-    // Envia pro html os valores do relógio digital...
-    clockDigital.innerHTML = `${fixZero(hour)}:${fixZero(minute)}:${fixZero(second)}`;
-
-    // Cálculo da rotação dos ponteiros...
-    let hourDeg = ((hour / 12) * hour); // Hora é dividida por 12 por que o relógio só tem 12 horas e não 24...
-    let minuteDeg = (minute * deg);
-    let secondDeg = (second * deg);
-
-    // Rotaciona os ponteiros com css...
-    pointerHour.style.transform = `rotateZ(${hourDeg}deg)`;
-    pointerMinute.style.transform = `rotateZ(${minuteDeg}deg)`;
-    pointerSecond.style.transform = `rotateZ(${secondDeg}deg)`;
+    handleClockDigital(hour, minute, second);
+    handleRotatePointersCalc(deg, hour, minute, second);
 });

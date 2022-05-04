@@ -19,6 +19,5 @@ setInterval(() => {
     let second = currentTime.getSeconds(); // Pega os segundos...
 
     handleClockDigital(hour, minute, second);
-    handleRotatePointersCalc(hour, minute, second);
-    handleRotatePointersStyle(hourDeg, minuteDeg, secondDeg);
+    handleRotatePointersCalc(deg, hour, minute, second);
 });
