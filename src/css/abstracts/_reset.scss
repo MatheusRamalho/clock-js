@@ -1,0 +1,73 @@
+@use './fonts'as font;
+@use './colors'as color;
+@use './breakpoints'as break;
+
+// CSS RESET...
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+}
+
+@media (max-width: break.$laptop-xs) {
+    html {
+        font-size: 93, 75%;
+    }
+}
+
+@media (max-width: break.$tablet-sm) {
+    html {
+        font-size: 87, 5%;
+    }
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: color.$color-black-50;
+
+    font-family: font.$ff-default;
+    font-weight: font.$fw-light;
+    font-size: font.$fs-md;
+    color: color.$color-gray-100;
+    line-height: font.$lh-tall;
+    text-transform: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, small, address {
+    overflow-wrap: break-word; // Para que o texto quebre...
+    hyphens: auto; // Adiciona hífen...
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+
+    font-family: font.$ff-highlight;
+    font-weight: font.$fw-extra-bold;
+    color: color.$color-secondary;
+    line-height: calc(1em + 1rem);
+}
+
+h4, h5, h6 {
+    color: color.$color-white;
+}
+
+h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+
+a {
+    color: color.$color-gray-50;
+    text-decoration: none;
+    outline: none;
+}
+
+img,
+svg {
+    max-width: 100%;
+    display: block;
+}

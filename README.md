@@ -24,8 +24,8 @@ This project was developed using the following technologies:
 Run this command to install the dependencies.
 
 ```
-sass src/sass/app.scss assets/css/app.css --style compressed --no-source-map
-sass --watch src/sass/app.scss:assets/css/app.css --style compressed --no-source-map
+sass src/css/app.scss assets/css/app.css --style compressed --no-source-map
+sass --watch src/css/app.scss:assets/css/app.css --style compressed --no-source-map
 ```
 
 <br>

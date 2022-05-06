@@ -1,0 +1,41 @@
+/*
+|--------------------------------------------------------------------------
+| FUNCTION CONVERTE PX -> REM
+|--------------------------------------------------------------------------
+*/
+
+@function convertPxToRem($value, $base: 16) {
+    @if type-of($value) == "number" { // type-of - retorna o tipo do valor...
+        @warn "O valor é um número: #{ $value }";
+
+        @if not unitless($value) { // unitles() - retorna se o número tem uma unidade...
+            @warn "O valor tem unidade:" unit($value);
+
+            @if unit($value) != rem { // unit() - retorna uma string com a unidade...
+                @warn "O valor tem unidade diferente de rem: #{ $value }";
+
+                $unid: $value / ($value * 0 + 1); // removendo a unidade...
+                $value: #{($unid / $base)}rem; // transformando em rem...
+                @return $value;
+
+            } @else {
+                @warn "O valor tem unidade rem: #{ $value }";
+                @return $value;
+            }
+
+        } @else {
+            @warn "O valor não tem unidade: #{ $value }";
+            @return #{$value}rem; // só adiciona a unidade rem ao value...
+
+            // transforma o value em rem...
+            // $value: #{($value / $base)}rem;
+            // @return $value;
+        }
+
+        @return $value;
+
+    } @else {
+        @warn "O valor não é um número: #{ $value }";
+        @debug "O valor não é um número: #{ $value }";
+    }
+}

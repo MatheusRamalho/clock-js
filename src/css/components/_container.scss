@@ -1,10 +1,8 @@
 // Usados para manter um padrão de largura...
 .container__ {
     width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 0.938rem;
-    padding-left: 0.938rem;
+    margin: 0 auto;
+    padding: 0 0.938rem;
 }
 
 @media (min-width: 576px) {

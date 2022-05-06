@@ -1,0 +1,11 @@
+/*
+|--------------------------------------------------------------------------
+| IMPORTS
+|--------------------------------------------------------------------------
+*/
+@use './abstracts/reset';
+@import "./components/container";
+@import './components/body';
+@import './components/main';
+@import "./components/footer";
+@import './components/clock';

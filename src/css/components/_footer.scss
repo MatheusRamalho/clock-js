@@ -1,30 +1,30 @@
 @use '../abstracts/fonts'as font;
 @use '../abstracts/colors'as color;
-@use '../abstracts/spaces'as space;
+@use '../abstracts/spacings'as space;
 
 footer.footer__ {
     width: 100%;
     height: 5rem;
-    padding: 0 space.$space40;
+    padding: 0 space.$space-40;
 
     display: flex;
     align-items: center;
     justify-content: flex-end;
 
     a {
-        font-size: font.$fsSM;
-        color: color.$colorsGray2;
+        font-size: font.$fs-sm;
+        color: color.$color-gray-100;
 
         &:hover {
-            color: color.$colorsYellow0;
+            color: color.$color-primary;
         }
     }
 }
 
 @media(max-width: 600px) {
     footer.footer__ {
-        height: 100px;
-        padding: 0 space.$space32;
+        height: 6.25rem;
+        padding: 0 space.$space-32;
 
         justify-content: center;
     }
